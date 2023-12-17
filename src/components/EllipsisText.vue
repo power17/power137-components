@@ -1,8 +1,11 @@
 <template>
-  <div ref="ellipsisRef" @mouseenter="checkEllisis" class="ellipsis box">Lorem ipsum dolor sit amet consectetur123123</div>
+  <div ref="ellipsisRef" @mouseenter="checkEllisis" class="ellipsis box">
+    <span>fnidn</span>Lorem ipsum dolor sit amet consectetur123123
+  </div>
   <div>{{ result }}</div>
 </template>
 <script lang="ts" setup>
+// 可参考 https://www.naiveui.com/zh-CN/os-theme/components/ellipsis
 import { ref, onMounted, Ref } from 'vue';
 const getPadding = (el: HTMLElement) => {
   const sytle = window.getComputedStyle(el, null);
@@ -23,6 +26,7 @@ const checkEllisis = (e: MouseEvent) => {
   const range = document.createRange();
   range.setStart(box, 0);
   range.setEnd(box, box.childNodes.length);
+  console.log(box.childNodes, 'childNodes');
   let rangeWidth = range.getBoundingClientRect().width;
   // let rangeHeight = range.getBoundingClientRect().height;
   // const contentWidth = rangeWidth - Math.floor(rangeWidth);
