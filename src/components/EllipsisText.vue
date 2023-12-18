@@ -1,12 +1,12 @@
 <template>
-  <div ref="ellipsisRef" @mouseenter="checkEllisis" class="ellipsis box">
+  <div ref="ellipsisRef" class="ellipsis box" @mouseenter="checkEllisis">
     <span>fnidn</span>Lorem ipsum dolor sit amet consectetur123123
   </div>
   <div>{{ result }}</div>
 </template>
 <script lang="ts" setup>
 // 可参考 https://www.naiveui.com/zh-CN/os-theme/components/ellipsis
-import { ref, onMounted, Ref } from 'vue';
+import { ref } from 'vue';
 const getPadding = (el: HTMLElement) => {
   const sytle = window.getComputedStyle(el, null);
   const paddingLeft = Number.parseInt(sytle.paddingLeft, 10) || 0;
@@ -17,7 +17,7 @@ const getPadding = (el: HTMLElement) => {
     pLeft: paddingLeft,
     pRight: paddingright,
     top: paddingTop,
-    bottom: paddingBottom,
+    bottom: paddingBottom
   };
 };
 const result = ref('null');
