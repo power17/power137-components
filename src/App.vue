@@ -1,10 +1,11 @@
-<script setup>
-import EllipsisText from './components/ellipsisText.vue';
-</script>
-
 <template>
-  <EllipsisText />
+  <Scrollbar>
+    <div>jfosjfos</div>
+  </Scrollbar>
 </template>
+<script setup>
+import Scrollbar from './components/Scrollbar.vue';
+</script>
 
 <style scoped>
 .logo {
