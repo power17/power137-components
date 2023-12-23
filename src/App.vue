@@ -1,11 +1,7 @@
 <template>
-  <Scrollbar>
-    <div>jfosjfos</div>
-  </Scrollbar>
+  <p-button></p-button>
 </template>
-<script setup>
-import Scrollbar from './components/Scrollbar.vue';
-</script>
+<script setup></script>
 
 <style scoped>
 .logo {
