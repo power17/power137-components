@@ -1,8 +1,8 @@
 @use "./styles/button-type.scss";
 @import "./styles/button-base.scss";
 .s-btn {
-  // 导入button基础样式
-  @include button-base; // 导入type相关的样式
-  @include button-variant(button-type.$type); // 导入hover等伪类样式
+  @include button-base;
+  @include button-variant(button-type.$type);
   @include button-variant(button-type.$pseudo, true);
+  @include button-variant(button-type.$size);
 }

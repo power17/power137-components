@@ -1,6 +1,13 @@
 <template>
-  <h1 class="text-3xl font-bold underline">hellow</h1>
-  <s-button type="primary">confirm</s-button>
+  <s-button size="large" :disabled="true" type="primary" @click="confirm"
+    >large</s-button
+  >
+  <s-button size="medium" type="primary">medium</s-button>
+  <s-button size="small" type="primary">small</s-button>
 </template>
-<script setup></script>
+<script setup>
+const confirm = () => {
+  console.log('confirm');
+};
+</script>
 <style scoped></style>
