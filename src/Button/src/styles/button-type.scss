@@ -36,16 +36,17 @@ $pseudo: (
     hover: (
       background-color: $s-primary-hover
     ),
-    disabled: (
-      color: $s-light-text,
-      background: $s-primary-disabled,
-      border: none
-    ),
+
     focus: (
       background-color: $s-primary-hover
     ),
     active: (
       background-color: $s-primary-active
+    ),
+    disabled: (
+      color: $s-light-text,
+      background-color: $s-primary-disabled,
+      border: none
     )
   ),
   secondary: (
@@ -53,11 +54,7 @@ $pseudo: (
       border-color: $s-form-control-line-active,
       color: $s-brand-active
     ),
-    disabled: (
-      color: $s-disabled-text,
-      background: $s-disabled-bg,
-      border: 1px solid $s-disabled-line
-    ),
+
     focus: (
       border-color: $s-form-control-line-active,
       color: $s-brand-active
@@ -65,6 +62,11 @@ $pseudo: (
     active: (
       border-color: $s-form-control-line-active,
       color: $s-brand-active
+    ),
+    disabled: (
+      color: $s-disabled-text,
+      background: $s-disabled-bg,
+      border: 1px solid $s-disabled-line
     )
   ),
   text: (
