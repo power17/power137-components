@@ -13,6 +13,10 @@ export const buttonProps = {
   disabled: {
     type: Boolean,
     default: false
+  },
+  block: {
+    type: Boolean,
+    default: false
   }
 };
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>;
