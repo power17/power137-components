@@ -7,7 +7,7 @@
   <s-button size="large" type="primary" block>confirm</s-button>
   <s-button size="large" block>cancel</s-button>
 </template>
-<script setup>
+<script lang="ts" setup>
 const confirm = () => {
   console.log('confirm');
 };
