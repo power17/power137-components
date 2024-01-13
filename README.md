@@ -1,6 +1,6 @@
 # 组件库
 
-- Vue 3 + Vite
+- Vue 3 + Vite + ts-node
 
 # 启动文档
 
