@@ -8,9 +8,6 @@ dependencies:
   axios:
     specifier: ^1.6.2
     version: 1.6.2
-  cnpm:
-    specifier: ^9.3.2
-    version: 9.3.2
   vue:
     specifier: ^3.3.8
     version: 3.3.12(typescript@5.3.3)
@@ -2140,24 +2137,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
-
-  /cnpm@9.3.2:
-    resolution: {integrity: sha512-SizeyGzjtBW3/M2rmwfRY3y9kEmR+1NGc92hOAadNxtRF06Mzf9zWYrvPZTlU8MmLDZJ6UFfL+fsiJjHFOnaEw==}
-    engines: {node: '>= 14.18.0'}
-    hasBin: true
-    dev: false
-    bundledDependencies:
-      - auto-correct
-      - bagpipe
-      - commander
-      - cross-spawn
-      - giturl
-      - ini
-      - npm
-      - npm-request
-      - npminstall
-      - open
-      - urllib
 
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
