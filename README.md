@@ -7,8 +7,12 @@
 访问 http://localhost:8888/
 
 ```shell
-# 启动文档
-npm run docs:dev
+# 开发组件库
+npm run dev
 # 打包组件库
 npm run build:component
+# 发布
+npm run publish
+# 启动文档
+npm run docs:dev
 ```
