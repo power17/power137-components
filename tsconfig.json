@@ -11,12 +11,14 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"]
   },
+  "allowImportingTsExtensions": true,
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "scripts/**/*.ts",
+    "cli/**/*.ts",
     "docs/.vitepress/theme"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
