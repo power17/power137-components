@@ -19,7 +19,8 @@
     "src/**/*.vue",
     "scripts/**/*.ts",
     "cli/**/*.ts",
-    "docs/.vitepress/theme"
+    "docs/.vitepress/theme",
+    "cli/src/commands/create.js"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

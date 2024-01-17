@@ -5,7 +5,7 @@
   "main": "./src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "ts-node-esm ./src/index.ts",
+    "dev": "ts-node-esm ./src/index.ts create",
     "build": "tsc"
   },
   "keywords": [],
