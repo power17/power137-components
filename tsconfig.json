@@ -20,7 +20,7 @@
     "scripts/**/*.ts",
     "cli/**/*.ts",
     "docs/.vitepress/theme",
-    "cli/src/commands/create.js"
+    "cli/src/commands/create.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
