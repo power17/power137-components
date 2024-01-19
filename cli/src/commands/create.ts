@@ -1,3 +1,3 @@
-export const onCreate = (cmd) => {
+export const onCreate = (cmd: string) => {
   console.log(cmd);
 };
