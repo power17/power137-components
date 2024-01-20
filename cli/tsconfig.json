@@ -6,6 +6,8 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "moduleResolution": "Nodenext"
+    "moduleResolution": "Nodenext",
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   }
 }

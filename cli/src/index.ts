@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { onCreate } from './commands/create';
+import { onCreate } from './commands/create.ts';
 const program = new Command();
 program
   .command('create')
