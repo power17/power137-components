@@ -1,4 +1,4 @@
-import { defineComponent, toRefs } from 'vue';
+import { defineComponent } from 'vue';
 import { TreeProps, treeProps } from './tree-type';
 export default defineComponent({
   name: 'STree',
