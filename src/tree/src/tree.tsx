@@ -1,11 +1,14 @@
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 import { TreeProps, treeProps } from './tree-type';
 export default defineComponent({
   name: 'STree',
   props: treeProps,
-  setup(props: TreeProps, ctx) {
+  setup(props: TreeProps) {
+    const { data: innerData } = toRefs(props);
     return () => {
-      return <div class="s-tree"></div>;
+      return (
+        <div class="s-tree">{innerData.value.map((tree) => tree.label)}</div>
+      );
     };
   }
 });

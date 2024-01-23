@@ -10,6 +10,15 @@ const sidebar = {
           link: '/components/button/'
         }
       ]
+    },
+    {
+      text: '数据展示',
+      items: [
+        {
+          text: 'tree',
+          link: '/components/tree/'
+        }
+      ]
     }
   ]
 };
