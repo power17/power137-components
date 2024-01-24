@@ -1,4 +1,4 @@
-import { defineComponent, toRefs } from 'vue';
+import { defineComponent, toRefs, ref } from 'vue';
 import { TreeProps, treeProps } from './tree-type';
 import { generateInnerTree } from './utils';
 export default defineComponent({
@@ -6,11 +6,13 @@ export default defineComponent({
   props: treeProps,
   setup(props: TreeProps) {
     const { data } = toRefs(props);
-    const innerData = generateInnerTree(data.value);
+    const innerData = ref(generateInnerTree(data.value));
     console.log(innerData);
     return () => {
       return (
-        <div class="s-tree">{innerData.map((tree) => tree.label + '   ')}</div>
+        <div class="s-tree">
+          {innerData.value.map((tree) => tree.label + '   ')}
+        </div>
       );
     };
   }
