@@ -11,41 +11,33 @@ import { reactive } from 'vue';
 export default {
   setup() {
     const data = reactive([
-      {
-        label: 'docs',
-        id: 'node-1',
-        level: 1
-      },
+      { label: 'docs', id: 'docs' },
       {
         label: 'packages',
-        id: 'node-2',
-        expand: true,
-        level: 1
-      },
-      {
-        label: 'vite',
-        id: 'node-2-1',
-        parentId: 'node-2',
+        id: 'packages',
         expanded: true,
-        level: 2
-      },
-      {
-        label: 'README.md',
-        id: 'node-2-1-1',
-        parentId: 'node-2-1',
-        isLeaf: true,
-        level: 3
+        children: [
+          { label: 'plugin-vue', id: 'plugin-vue' },
+          {
+            label: 'vite',
+            id: 'vite',
+            expanded: true,
+            children: [
+              { label: 'src', id: 'src' },
+              { label: 'README.md', id: 'README.md' }
+            ]
+          }
+        ]
       },
       {
         label: 'scripts',
-        id: 'node-3',
-        level: 1
+        id: 'scripts',
+        children: [
+          { label: 'release.ts', id: 'release.ts' },
+          { label: 'verifyCommit.ts', id: 'verifyCommit.ts' }
+        ]
       },
-      {
-        label: 'pnpm-workspace.yaml',
-        id: 'node-4',
-        level: 1
-      }
+      { label: 'pnpm-workspace.yaml', id: 'pnpm-workspace.yaml' }
     ]);
     return { data };
   }
