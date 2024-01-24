@@ -7,11 +7,12 @@ export default defineComponent({
   setup(props: TreeProps) {
     const { data } = toRefs(props);
     const innerData = ref(generateInnerTree(data.value));
-    console.log(innerData);
     return () => {
       return (
         <div class="s-tree">
-          {innerData.value.map((tree) => tree.label + '   ')}
+          {innerData.value.map((tree) => (
+            <div>{tree.label}</div>
+          ))}
         </div>
       );
     };
