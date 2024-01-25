@@ -11,7 +11,9 @@ export default defineComponent({
       return (
         <div class="s-tree">
           {innerData.value.map((tree) => (
-            <div>{tree.label}</div>
+            <div style={{ paddingLeft: `${24 * (tree.level - 1)}px` }}>
+              {tree.label}
+            </div>
           ))}
         </div>
       );
