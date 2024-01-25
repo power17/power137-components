@@ -12,6 +12,26 @@ export default defineComponent({
         <div class="s-tree">
           {innerData.value.map((tree) => (
             <div style={{ paddingLeft: `${24 * (tree.level - 1)}px` }}>
+              {tree.isLeaf ? (
+                <span style={{ display: 'inline-block', width: '25px' }}></span>
+              ) : (
+                <svg
+                  style={{
+                    display: 'inline-block',
+                    width: '25px',
+                    height: '16px',
+                    verticalAlign: 'middle',
+                    transform: tree.expanded ? 'rotate(90deg)' : ''
+                  }}
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M384 192v640l384-320.064z"
+                  ></path>
+                </svg>
+              )}
               {tree.label}
             </div>
           ))}
