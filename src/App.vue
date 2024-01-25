@@ -1,15 +1,36 @@
 <template>
-  <s-button size="large" :disabled="true" type="primary" @click="confirm"
-    >large</s-button
-  >
-  <s-button size="medium" type="primary">medium</s-button>
-  <s-button size="small" type="primary">small</s-button>
-  <s-button size="large" type="primary" block>confirm</s-button>
-  <s-button size="large" block>cancel</s-button>
+  <STree :data="data"></STree>
 </template>
 <script lang="ts" setup>
-const confirm = () => {
-  console.log('confirm');
-};
+import { reactive } from 'vue';
+const data = reactive([
+  { label: 'docs', id: 'docs' },
+  {
+    label: 'packages',
+    id: 'packages',
+    expanded: true,
+    children: [
+      { label: 'plugin-vue', id: 'plugin-vue' },
+      {
+        label: 'vite',
+        id: 'vite',
+        expanded: true,
+        children: [
+          { label: 'src', id: 'src' },
+          { label: 'README.md', id: 'README.md' }
+        ]
+      }
+    ]
+  },
+  {
+    label: 'scripts',
+    id: 'scripts',
+    children: [
+      { label: 'release.ts', id: 'release.ts' },
+      { label: 'verifyCommit.ts', id: 'verifyCommit.ts' }
+    ]
+  },
+  { label: 'pnpm-workspace.yaml', id: 'pnpm-workspace.yaml' }
+]);
 </script>
 <style scoped></style>
