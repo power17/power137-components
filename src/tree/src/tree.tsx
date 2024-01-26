@@ -1,5 +1,5 @@
 import { defineComponent, toRefs, ref } from 'vue';
-import { TreeProps, treeProps } from './tree-type';
+import { IInnerTreeNode, TreeProps, treeProps } from './tree-type';
 import { generateInnerTree } from './utils';
 export default defineComponent({
   name: 'STree',
@@ -7,6 +7,7 @@ export default defineComponent({
   setup(props: TreeProps) {
     const { data } = toRefs(props);
     const innerData = ref(generateInnerTree(data.value));
+    const toggleNode = (node: IInnerTreeNode) => {};
     return () => {
       return (
         <div class="s-tree">
@@ -27,6 +28,9 @@ export default defineComponent({
                 ></span>
               ) : (
                 <svg
+                  onClick={() => {
+                    toggleNode(tree);
+                  }}
                   style={{
                     display: 'inline-block',
                     width: '25px',
