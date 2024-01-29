@@ -1,4 +1,4 @@
-import { defineComponent, toRefs, ref } from 'vue';
+import { defineComponent, toRefs, ref, computed } from 'vue';
 import { IInnerTreeNode, TreeProps, treeProps } from './tree-type';
 import { generateInnerTree } from './utils';
 export default defineComponent({
@@ -8,10 +8,16 @@ export default defineComponent({
     const { data } = toRefs(props);
     const innerData = ref(generateInnerTree(data.value));
     const toggleNode = (node: IInnerTreeNode) => {};
+    const getExpandedTree = computed(() => {
+      const result: IInnerTreeNode[] = [];
+      console.log(innerData.value);
+      innerData.value.map((item) => item.expanded);
+      return result;
+    });
     return () => {
       return (
         <div class="s-tree">
-          {innerData.value.map((tree) => (
+          {getExpandedTree.value.map((tree) => (
             <div
               style={{
                 paddingLeft: `${24 * (tree.level - 1)}px`,
