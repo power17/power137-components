@@ -10,8 +10,12 @@ export default defineComponent({
     const toggleNode = (node: IInnerTreeNode) => {};
     const getExpandedTree = computed(() => {
       const result: IInnerTreeNode[] = [];
-      console.log(innerData.value);
-      innerData.value.map((item) => item.expanded);
+      const excludeTree: IInnerTreeNode[] = [];
+      innerData.value.map((item) => {
+        if (excludeTree) {
+        }
+        result.push(item);
+      });
       return result;
     });
     return () => {
