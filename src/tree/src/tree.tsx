@@ -7,14 +7,35 @@ export default defineComponent({
   setup(props: TreeProps) {
     const { data } = toRefs(props);
     const innerData = ref(generateInnerTree(data.value));
-    const toggleNode = (node: IInnerTreeNode) => {};
+    // 获取指定节点的子节点
+    const getChildren = (node: IInnerTreeNode): IInnerTreeNode[] => {
+      const result = []; // 找到传入节点在列表中的索引
+      const startIndex = innerData.value.findIndex(
+        (item) => item.id === node.id
+      ); // 找到它后面所有的子节点(level比指定节点大)
+      for (
+        let i = startIndex + 1;
+        i < innerData.value.length && node.level < innerData.value[i].level;
+        i++
+      ) {
+        result.push(innerData.value[i]);
+      }
+      return result;
+    };
+    const toggleNode = (node: IInnerTreeNode) => {
+      const cur = innerData.value.find((item) => item.id === node.id);
+      if (cur) cur.expanded = !cur.expanded;
+    };
     const getExpandedTree = computed(() => {
       const result: IInnerTreeNode[] = [];
-      const excludeTree: IInnerTreeNode[] = [];
-      innerData.value.map((item) => {
-        if (excludeTree) {
+      let excludeNodes: IInnerTreeNode[] = [];
+      innerData.value.forEach((item) => {
+        if (!excludeNodes.some((node) => node.id === item.id)) {
+          if (!item.expanded) {
+            excludeNodes = getChildren(item);
+          }
+          result.push(item);
         }
-        result.push(item);
       });
       return result;
     });

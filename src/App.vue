@@ -25,6 +25,7 @@ const data = reactive([
   {
     label: 'scripts',
     id: 'scripts',
+    expanded: true,
     children: [
       { label: 'release.ts', id: 'release.ts' },
       { label: 'verifyCommit.ts', id: 'verifyCommit.ts' }
