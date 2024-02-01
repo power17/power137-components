@@ -1,51 +1,16 @@
-import { defineComponent, toRefs, ref, computed } from 'vue';
-import { IInnerTreeNode, TreeProps, treeProps } from './tree-type';
-import { generateInnerTree } from './utils';
+import { defineComponent, toRefs } from 'vue';
+import { TreeProps, treeProps } from './tree-type';
+import useTree from './composable/use-tree';
 export default defineComponent({
   name: 'STree',
   props: treeProps,
   setup(props: TreeProps) {
     const { data } = toRefs(props);
-    const innerData = ref(generateInnerTree(data.value));
-    // 获取指定节点的子节点
-    const getChildren = (node: IInnerTreeNode): IInnerTreeNode[] => {
-      const result = [];
-      const startIndex = innerData.value.findIndex(
-        (item) => item.id === node.id
-      );
-      for (
-        let i = startIndex + 1;
-        i < innerData.value.length && node.level < innerData.value[i].level;
-        i++
-      ) {
-        result.push(innerData.value[i]);
-      }
-      return result;
-    };
-    const toggleNode = (node: IInnerTreeNode) => {
-      const cur = innerData.value.find((item) => item.id === node.id);
-      if (cur) {
-        cur.expanded = !cur.expanded;
-      }
-    };
-    const getExpandedTree = computed(() => {
-      const result: IInnerTreeNode[] = [];
-      let excludeNodes: IInnerTreeNode[] = [];
-      innerData.value.forEach((item) => {
-        // 是否是子节点
-        if (!excludeNodes.some((node) => node.id === item.id)) {
-          if (!item.expanded) {
-            excludeNodes = getChildren(item);
-          }
-          result.push(item);
-        }
-      });
-      return result;
-    });
+    const { expandTree, toggleNode } = useTree(data.value);
     return () => {
       return (
-        <div class="s-tree">
-          {getExpandedTree.value.map((tree) => (
+        <div class="s-tree  ">
+          {expandTree.value.map((tree) => (
             <div
               style={{
                 paddingLeft: `${24 * (tree.level - 1)}px`,
