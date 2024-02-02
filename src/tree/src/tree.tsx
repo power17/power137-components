@@ -9,9 +9,10 @@ export default defineComponent({
     const { expandTree, toggleNode } = useTree(data.value);
     return () => {
       return (
-        <div class="s-tree  ">
+        <div class="s-tree">
           {expandTree.value.map((tree) => (
             <div
+              class="s-tree-node hover:bg-slate-300"
               style={{
                 paddingLeft: `${24 * (tree.level - 1)}px`,
                 display: 'flex',
